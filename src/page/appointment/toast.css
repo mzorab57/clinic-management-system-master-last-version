@@ -1,0 +1,7 @@
+.error-toast{
+    border-radius: 8px;
+    border-width: 2px;
+    text-align: center;
+    width: 350px;
+    scale: 0.9;
+}

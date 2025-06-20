@@ -1,0 +1,9 @@
+.onprint{
+    display: none;
+}
+
+@media print {
+  .onprint{
+    display: block;
+}
+}
