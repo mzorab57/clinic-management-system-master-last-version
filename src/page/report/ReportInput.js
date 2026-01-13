@@ -100,7 +100,7 @@ const ReportInput = ({
           </div>
 
           {/* ExpenseType input */}
-          <div className={`${role === "doctor" || role === "admin"   ? "hidden" : "w-full"}`}>
+          <div className={`${role === "doctor"    ? "hidden" : "w-full"}`}>
             <label className="text-gray-600 text-base 2xl:text-lg">
               Expense Type
             </label>
@@ -129,7 +129,7 @@ const ReportInput = ({
           {/* Working type input */}
           <div
             className={`${
-              role === "reception" || role === "doctor" || role === "admin" ? "hidden" : "w-full"
+              role === "reception" || role === "doctor"  ? "hidden" : "w-full"
             }`}
           >
             <label className="text-gray-600 text-base 2xl:text-lg">

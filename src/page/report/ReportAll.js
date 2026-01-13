@@ -1,22 +1,22 @@
 import React, { useContext, useState } from "react";
 import GlobalContext from "../../contexts/createContext/context";
 import ReportDoctor from "./ReportDoctor";
-// import { HiOutlineAnnotation } from "react-icons/hi";
+import { HiOutlineAnnotation } from "react-icons/hi";
 // AiOutlineMoneyCollect,
-import {  AiOutlineBranches } from "react-icons/ai";
+import {  AiOutlineBranches, AiOutlineMoneyCollect } from "react-icons/ai";
 import {
-  // BsPersonDown,
+  BsPersonDown,
   BsPersonVcard,
   BsMenuApp,
   BsPersonGear,
 } from "react-icons/bs";
-// import { MdAttachMoney, MdOutlinePerson } from "react-icons/md";
+import { MdAttachMoney, MdOutlinePerson } from "react-icons/md";
 // SiExpensify,
-import {  SiVirustotal } from "react-icons/si";
+import {  SiVirustotal, SiExpensify } from "react-icons/si";
 import { IoCodeWorkingOutline } from "react-icons/io5";
 import { RiEmpathizeLine } from "react-icons/ri";
 import { TbReceipt2, TbNurse } from "react-icons/tb";
-// import { MdOutlinePersonPin } from "react-icons/md";
+import { MdOutlinePersonPin } from "react-icons/md";
 import ReportExpense from "./ReportExpense";
 import ReportWorkingType from "./ReportWorkingType";
 import ReportMain from "./ReportMain";
@@ -39,14 +39,14 @@ const ReportAll = ({
   to,
   doctor_id,
   expense_type_id,
-  // working_type_id,
+  working_type_id,
   setErorFrom,
   setErorTo,
-  // setErorDoctorid,
+  setErorDoctorid,
   sick_id,
   setErorsickid,
   admin_id,
-  // setErorAdminId,
+  setErorAdminId,
 }) => {
   const [showDoctor, setShowDoctor] = useState(false);
   const [showExpense, setShowExpense] = useState(false);
@@ -69,11 +69,11 @@ const ReportAll = ({
     mainReportList,
     doctorlegerList,
     expenseReportList,
-    // fetchExpensereportReport,
-    // fetchDoctorlegerReport,
-    // fetchReport,
-    // fetchWorkingTypeReportReport,
-    // fetchDoctorGivienLoan,
+    fetchExpensereportReport,
+    fetchDoctorlegerReport,
+    fetchReport,
+    fetchWorkingTypeReportReport,
+    fetchDoctorGivienLoan,
     fetchDoctorRemainLoan,
     fetchDoctorWorking,
     fetchDoctorSicklegerReport,
@@ -81,10 +81,10 @@ const ReportAll = ({
     fetchReceptionTotalLoanReport,
     fetchAdminTotalLoanReport,
     fetchReceptionExpenseReport,
-    // fetchReceptionGivinLoanReport,
+    fetchReceptionGivinLoanReport,
     fetchAdminDoctorLedgerReport,
     fetchAdminSickLedgerReport,
-    // fetchAdminTotalAppointmentReport,
+    fetchAdminTotalAppointmentReport,
     workingTypeReportList,
     doctorGivienLoanList,
     doctorRemainLoanList,
@@ -206,62 +206,62 @@ const ReportAll = ({
   };
 
   // doctor report
-  // const handelDoctorReport = (e) => {
-  //   e.preventDefault();
-  //   if (doctor_id && from && to) {
-  //     fetchDoctorlegerReport({ from, to, doctor_id });
-  //     setShowDoctor(true);
-  //     setAdminTotalAppointment(false);
-  //     setAdminSickLedger(false);
-  //     setAdminDoctorLedger(false);
-  //     setReceptionGivinLoan(false);
-  //     setReceptionExpense(false);
-  //     setAdminTotalLoan(false);
-  //     setReceptionTotalLoan(false);
-  //     setReceptionAppointment(false);
-  //     setDoctorSickLedger(false);
-  //     setShowExpense(false);
-  //     setShowMain(false);
-  //     setShowWorkingType(false);
-  //     setGivenLoan(false);
-  //     setRemainLoan(false);
-  //     setDoctorWorking(false);
-  //   } else if (!from) {
-  //     setErorFrom(true);
-  //   } else if (!to) {
-  //     setErorTo(true);
-  //   } else if (!doctor_id) {
-  //     setErorDoctorid(true);
-  //   }
-  // };
+  const handelDoctorReport = (e) => {
+    e.preventDefault();
+    if (doctor_id && from && to) {
+      fetchDoctorlegerReport({ from, to, doctor_id });
+      setShowDoctor(true);
+      setAdminTotalAppointment(false);
+      setAdminSickLedger(false);
+      setAdminDoctorLedger(false);
+      setReceptionGivinLoan(false);
+      setReceptionExpense(false);
+      setAdminTotalLoan(false);
+      setReceptionTotalLoan(false);
+      setReceptionAppointment(false);
+      setDoctorSickLedger(false);
+      setShowExpense(false);
+      setShowMain(false);
+      setShowWorkingType(false);
+      setGivenLoan(false);
+      setRemainLoan(false);
+      setDoctorWorking(false);
+    } else if (!from) {
+      setErorFrom(true);
+    } else if (!to) {
+      setErorTo(true);
+    } else if (!doctor_id) {
+      setErorDoctorid(true);
+    }
+  };
   // admin total appointment report
-  // const handelAdminTotalAppointment = (e) => {
-  //   e.preventDefault();
+  const handelAdminTotalAppointment = (e) => {
+    e.preventDefault();
 
-  //   if (from && to) {
-  //     fetchAdminTotalAppointmentReport({ from, to, doctor_id });
-  //     setAdminTotalAppointment(true);
-  //     setShowDoctor(false);
-  //     setAdminSickLedger(false);
-  //     setAdminDoctorLedger(false);
-  //     setReceptionGivinLoan(false);
-  //     setReceptionExpense(false);
-  //     setAdminTotalLoan(false);
-  //     setReceptionTotalLoan(false);
-  //     setReceptionAppointment(false);
-  //     setDoctorSickLedger(false);
-  //     setShowExpense(false);
-  //     setShowMain(false);
-  //     setShowWorkingType(false);
-  //     setGivenLoan(false);
-  //     setRemainLoan(false);
-  //     setDoctorWorking(false);
-  //   } else if (!from) {
-  //     setErorFrom(true);
-  //   } else if (!to) {
-  //     setErorTo(true);
-  //   }
-  // };
+    if (from && to) {
+      fetchAdminTotalAppointmentReport({ from, to, doctor_id });
+      setAdminTotalAppointment(true);
+      setShowDoctor(false);
+      setAdminSickLedger(false);
+      setAdminDoctorLedger(false);
+      setReceptionGivinLoan(false);
+      setReceptionExpense(false);
+      setAdminTotalLoan(false);
+      setReceptionTotalLoan(false);
+      setReceptionAppointment(false);
+      setDoctorSickLedger(false);
+      setShowExpense(false);
+      setShowMain(false);
+      setShowWorkingType(false);
+      setGivenLoan(false);
+      setRemainLoan(false);
+      setDoctorWorking(false);
+    } else if (!from) {
+      setErorFrom(true);
+    } else if (!to) {
+      setErorTo(true);
+    }
+  };
 
   // admin doctor ledger report
   const handelAdminDoctorLedgerReport = (e) => {
@@ -372,66 +372,66 @@ const ReportAll = ({
   };
 
   // doctor Given Loan report
-  // const handelDoctorGivenLoan = (e) => {
-  //   e.preventDefault();
-  //   if (doctor_id && from && to) {
-  //     fetchDoctorGivienLoan({ from, to, doctor_id });
-  //     setGivenLoan(true);
-  //     setAdminTotalAppointment(false);
-  //     setAdminSickLedger(false);
-  //     setAdminDoctorLedger(false);
-  //     setReceptionGivinLoan(false);
-  //     setReceptionExpense(false);
-  //     setAdminTotalLoan(false);
-  //     setReceptionTotalLoan(false);
-  //     setReceptionAppointment(false);
-  //     setDoctorSickLedger(false);
-  //     setShowDoctor(false);
-  //     setShowExpense(false);
-  //     setShowMain(false);
-  //     setShowWorkingType(false);
-  //     setRemainLoan(false);
-  //     setDoctorWorking(false);
-  //   } else if (!from) {
-  //     setErorFrom(true);
-  //   } else if (!to) {
-  //     setErorTo(true);
-  //   } else if (!doctor_id) {
-  //     setErorDoctorid(true);
-  //   }
-  // };
+  const handelDoctorGivenLoan = (e) => {
+    e.preventDefault();
+    if (doctor_id && from && to) {
+      fetchDoctorGivienLoan({ from, to, doctor_id });
+      setGivenLoan(true);
+      setAdminTotalAppointment(false);
+      setAdminSickLedger(false);
+      setAdminDoctorLedger(false);
+      setReceptionGivinLoan(false);
+      setReceptionExpense(false);
+      setAdminTotalLoan(false);
+      setReceptionTotalLoan(false);
+      setReceptionAppointment(false);
+      setDoctorSickLedger(false);
+      setShowDoctor(false);
+      setShowExpense(false);
+      setShowMain(false);
+      setShowWorkingType(false);
+      setRemainLoan(false);
+      setDoctorWorking(false);
+    } else if (!from) {
+      setErorFrom(true);
+    } else if (!to) {
+      setErorTo(true);
+    } else if (!doctor_id) {
+      setErorDoctorid(true);
+    }
+  };
 
   // expense report
-  // const handelExpenseReport = (e) => {
-  //   e.preventDefault();
-  //   if (from && to) {
-  //     fetchExpensereportReport({
-  //       from,
-  //       to,
-  //       expense_type_id,
-  //     });
-  //     setShowExpense(true);
-  //     setAdminTotalAppointment(false);
-  //     setAdminSickLedger(false);
-  //     setAdminDoctorLedger(false);
-  //     setReceptionGivinLoan(false);
-  //     setReceptionExpense(false);
-  //     setAdminTotalLoan(false);
-  //     setReceptionTotalLoan(false);
-  //     setReceptionAppointment(false);
-  //     setDoctorSickLedger(false);
-  //     setShowDoctor(false);
-  //     setShowMain(false);
-  //     setShowWorkingType(false);
-  //     setGivenLoan(false);
-  //     setRemainLoan(false);
-  //     setDoctorWorking(false);
-  //   } else if (!from) {
-  //     setErorFrom(true);
-  //   } else if (!to) {
-  //     setErorTo(true);
-  //   }
-  // };
+  const handelExpenseReport = (e) => {
+    e.preventDefault();
+    if (from && to) {
+      fetchExpensereportReport({
+        from,
+        to,
+        expense_type_id,
+      });
+      setShowExpense(true);
+      setAdminTotalAppointment(false);
+      setAdminSickLedger(false);
+      setAdminDoctorLedger(false);
+      setReceptionGivinLoan(false);
+      setReceptionExpense(false);
+      setAdminTotalLoan(false);
+      setReceptionTotalLoan(false);
+      setReceptionAppointment(false);
+      setDoctorSickLedger(false);
+      setShowDoctor(false);
+      setShowMain(false);
+      setShowWorkingType(false);
+      setGivenLoan(false);
+      setRemainLoan(false);
+      setDoctorWorking(false);
+    } else if (!from) {
+      setErorFrom(true);
+    } else if (!to) {
+      setErorTo(true);
+    }
+  };
 
   // handel Reception Expense report
   const handelReceptionExpense = (e) => {
@@ -465,152 +465,152 @@ const ReportAll = ({
     } 
   };
   // handel Reception givin loan report
-  // const handelReceptionGivinLoan = (e) => {
-  //   e.preventDefault();
-  //   if (from && to && admin_id) {
-  //     fetchReceptionGivinLoanReport({
-  //       from,
-  //       to,
-  //       admin_id,
-  //     });
-  //     setReceptionGivinLoan(true);
-  //     setAdminTotalAppointment(false);
-  //     setAdminSickLedger(false);
-  //     setAdminDoctorLedger(false);
-  //     setReceptionExpense(false);
-  //     setShowExpense(false);
-  //     setReceptionTotalLoan(false);
-  //     setReceptionAppointment(false);
-  //     setDoctorSickLedger(false);
-  //     setShowDoctor(false);
-  //     setShowMain(false);
-  //     setShowWorkingType(false);
-  //     setGivenLoan(false);
-  //     setRemainLoan(false);
-  //     setDoctorWorking(false);
-  //   } else if (!from) {
-  //     setErorFrom(true);
-  //   } else if (!to) {
-  //     setErorTo(true);
-  //   } else if (!admin_id) {
-  //     setErorAdminId(true);
-  //   }
-  // };
+  const handelReceptionGivinLoan = (e) => {
+    e.preventDefault();
+    if (from && to && admin_id) {
+      fetchReceptionGivinLoanReport({
+        from,
+        to,
+        admin_id,
+      });
+      setReceptionGivinLoan(true);
+      setAdminTotalAppointment(false);
+      setAdminSickLedger(false);
+      setAdminDoctorLedger(false);
+      setReceptionExpense(false);
+      setShowExpense(false);
+      setReceptionTotalLoan(false);
+      setReceptionAppointment(false);
+      setDoctorSickLedger(false);
+      setShowDoctor(false);
+      setShowMain(false);
+      setShowWorkingType(false);
+      setGivenLoan(false);
+      setRemainLoan(false);
+      setDoctorWorking(false);
+    } else if (!from) {
+      setErorFrom(true);
+    } else if (!to) {
+      setErorTo(true);
+    } else if (!admin_id) {
+      setErorAdminId(true);
+    }
+  };
 
   // main report
-  // const handelMainReport = (e) => {
-  //   e.preventDefault();
-  //   if (from && to) {
-  //     fetchReport({ from, to });
-  //     setShowMain(true);
-  //     setAdminTotalAppointment(false);
-  //     setAdminSickLedger(false);
-  //     setAdminDoctorLedger(false);
-  //     setReceptionGivinLoan(false);
-  //     setReceptionExpense(false);
-  //     setAdminTotalLoan(false);
-  //     setReceptionTotalLoan(false);
-  //     setReceptionAppointment(false);
-  //     setDoctorSickLedger(false);
-  //     setShowExpense(false);
-  //     setShowDoctor(false);
-  //     setShowWorkingType(false);
-  //     setGivenLoan(false);
-  //     setRemainLoan(false);
-  //     setDoctorWorking(false);
-  //   } else if (!from) {
-  //     setErorFrom(true);
-  //   } else if (!to) {
-  //     setErorTo(true);
-  //   }
-  // };
+  const handelMainReport = (e) => {
+    e.preventDefault();
+    if (from && to) {
+      fetchReport({ from, to });
+      setShowMain(true);
+      setAdminTotalAppointment(false);
+      setAdminSickLedger(false);
+      setAdminDoctorLedger(false);
+      setReceptionGivinLoan(false);
+      setReceptionExpense(false);
+      setAdminTotalLoan(false);
+      setReceptionTotalLoan(false);
+      setReceptionAppointment(false);
+      setDoctorSickLedger(false);
+      setShowExpense(false);
+      setShowDoctor(false);
+      setShowWorkingType(false);
+      setGivenLoan(false);
+      setRemainLoan(false);
+      setDoctorWorking(false);
+    } else if (!from) {
+      setErorFrom(true);
+    } else if (!to) {
+      setErorTo(true);
+    }
+  };
 
   // working type report
-  // const handelWorkingTypeReport = (e) => {
-  //   e.preventDefault();
-  //   if (from && to) {
-  //     fetchWorkingTypeReportReport({ from, to, working_type_id });
-  //     setShowWorkingType(true);
-  //     setAdminTotalAppointment(false);
-  //     setAdminSickLedger(false);
-  //     setAdminDoctorLedger(false);
-  //     setReceptionGivinLoan(false);
-  //     setReceptionExpense(false);
-  //     setAdminTotalLoan(false);
-  //     setReceptionTotalLoan(false);
-  //     setReceptionAppointment(false);
-  //     setDoctorSickLedger(false);
-  //     setShowMain(false);
-  //     setShowExpense(false);
-  //     setShowDoctor(false);
-  //     setGivenLoan(false);
-  //     setRemainLoan(false);
-  //     setDoctorWorking(false);
-  //   } else if (!from) {
-  //     setErorFrom(true);
-  //   } else if (!to) {
-  //     setErorTo(true);
-  //   }
-  // };
+  const handelWorkingTypeReport = (e) => {
+    e.preventDefault();
+    if (from && to) {
+      fetchWorkingTypeReportReport({ from, to, working_type_id });
+      setShowWorkingType(true);
+      setAdminTotalAppointment(false);
+      setAdminSickLedger(false);
+      setAdminDoctorLedger(false);
+      setReceptionGivinLoan(false);
+      setReceptionExpense(false);
+      setAdminTotalLoan(false);
+      setReceptionTotalLoan(false);
+      setReceptionAppointment(false);
+      setDoctorSickLedger(false);
+      setShowMain(false);
+      setShowExpense(false);
+      setShowDoctor(false);
+      setGivenLoan(false);
+      setRemainLoan(false);
+      setDoctorWorking(false);
+    } else if (!from) {
+      setErorFrom(true);
+    } else if (!to) {
+      setErorTo(true);
+    }
+  };
 
 
   // data report showing
-  const reportData = [
-    // {
-    //   id: 1,
-    //   action: handelDoctorReport,
-    //   style: "border-green-300",
-    //   icon: (
-    //     <MdAttachMoney className="w-10 h-10 group-hover:text-green-400 duration-300 text-green-500 " />
-    //   ),
-    //   name: "Doctor",
-    //   requier: "(Doctor , From , To)",
-    //   roles: ["admin"],
-    // },
-    // {
-    //   id: 2,
-    //   action: handelExpenseReport,
-    //   style: "border-purple-300",
-    //   icon: (
-    //     <SiExpensify className="w-10 h-10 group-hover:text-purple-400 duration-300 text-purple-500 " />
-    //   ),
-    //   name: "Expense",
-    //   requier: "(Expense Type , From , To)",
-    //   roles: ["admin"],
-    // },
-    // {
-    //   id: 3,
-    //   action: handelWorkingTypeReport,
-    //   style: "border-orange-300",
-    //   icon: (
-    //     <HiOutlineAnnotation className="w-10 h-10 group-hover:text-orange-400 duration-300 text-orange-500 " />
-    //   ),
-    //   name: "Working",
-    //   requier: "(Working Type , From , To)",
-    //   roles: ["admin"],
-    // },
-    // {
-    //   id: 4,
-    //   action: handelMainReport,
-    //   style: "border-cyan-300",
-    //   icon: (
-    //     <AiOutlineMoneyCollect className="w-10 h-10  group-hover:text-cyan-400 duration-300 text-cyan-500 " />
-    //   ),
-    //   name: "Main Report",
-    //   requier: "(From , To)",
-    //   roles: ["admin"],
-    // },
-    // {
-    //   id: 5,
-    //   action: handelDoctorGivenLoan,
-    //   style: "border-pink-500",
-    //   icon: (
-    //     <BsPersonDown className="w-10 h-10  group-hover:text-pink-400 duration-300 text-pink-500 " />
-    //   ),
-    //   name: "Givinen Loan",
-    //   requier: "(Doctor , From , To)",
-    //   roles: ["doctor"],
-    // },
+const reportData = [
+    {
+      id: 1,
+      action: handelDoctorReport,
+      style: "border-green-300",
+      icon: (
+        <MdAttachMoney className="w-10 h-10 group-hover:text-green-400 duration-300 text-green-500 " />
+      ),
+      name: "Doctor",
+      requier: "(Doctor , From , To)",
+      roles: ["admin"],
+    },
+    {
+      id: 2,
+      action: handelExpenseReport,
+      style: "border-purple-300",
+      icon: (
+        <SiExpensify className="w-10 h-10 group-hover:text-purple-400 duration-300 text-purple-500 " />
+      ),
+      name: "Expense",
+      requier: "(Expense Type , From , To)",
+      roles: ["admin"],
+    },
+    {
+      id: 3,
+      action: handelWorkingTypeReport,
+      style: "border-orange-300",
+      icon: (
+        <HiOutlineAnnotation className="w-10 h-10 group-hover:text-orange-400 duration-300 text-orange-500 " />
+      ),
+      name: "Working",
+      requier: "(Working Type , From , To)",
+      roles: ["admin"],
+    },
+    {
+      id: 4,
+      action: handelMainReport,
+      style: "border-cyan-300",
+      icon: (
+        <AiOutlineMoneyCollect className="w-10 h-10  group-hover:text-cyan-400 duration-300 text-cyan-500 " />
+      ),
+      name: "Main Report",
+      requier: "(From , To)",
+      roles: ["admin"],
+    },
+    {
+      id: 5,
+      action: handelDoctorGivenLoan,
+      style: "border-pink-500",
+      icon: (
+        <BsPersonDown className="w-10 h-10  group-hover:text-pink-400 duration-300 text-pink-500 " />
+      ),
+      name: "Givinen Loan",
+      requier: "(Doctor , From , To)",
+      roles: ["doctor", "admin"],
+    },
     {
       id: 6,
       action: handelRemainDoctorLoan,
@@ -620,7 +620,7 @@ const ReportAll = ({
       ),
       name: "Remain Loan",
       requier: "",
-      roles: ["doctor"],
+      roles: ["doctor", "admin"],
     },
     {
       id: 7,
@@ -631,7 +631,7 @@ const ReportAll = ({
       ),
       name: "Working",
       requier: "(From , To)",
-      roles: ["doctor"],
+      roles: ["doctor", "admin"],
     },
     {
       id: 8,
@@ -642,7 +642,7 @@ const ReportAll = ({
       ),
       name: "Patient Ledger",
       requier: "(Patient , From , To)",
-      roles: ["doctor"],
+      roles: ["doctor", "admin"],
     },
     {
       id: 9,
@@ -653,7 +653,7 @@ const ReportAll = ({
       ),
       name: "Appointment",
       requier: "(From , To)",
-      roles: ["reception"],
+      roles: ["reception", "admin"],
     },
     {
       id: 10,
@@ -664,7 +664,7 @@ const ReportAll = ({
       ),
       name: "Total Loan",
       requier: "(No Parameters)",
-      roles: ["reception"],
+      roles: ["reception", "admin"],
     },
     {
       id: 11,
@@ -686,19 +686,19 @@ const ReportAll = ({
       ),
       name: "Expense",
       requier: "(From , To , Expense Type)",
-      roles: ["reception"],
+      roles: ["reception", "admin"],
     },
-    // {
-    //   id: 13,
-    //   action: handelReceptionGivinLoan,
-    //   style: "border-[#926869]",
-    //   icon: (
-    //     <MdOutlinePersonPin className="w-10 h-10  group-hover:text-[#B68B8C] duration-300 text-[#926869] " />
-    //   ),
-    //   name: "Givin Loan",
-    //   requier: "(From , To , Admin)",
-    //   roles: ["reception"],
-    // },
+    {
+      id: 13,
+      action: handelReceptionGivinLoan,
+      style: "border-[#926869]",
+      icon: (
+        <MdOutlinePersonPin className="w-10 h-10  group-hover:text-[#B68B8C] duration-300 text-[#926869] " />
+      ),
+      name: "Givin Loan",
+      requier: "(From , To , Admin)",
+      roles: ["reception", "admin"],
+    },
     {
       id: 14,
       action: handelAdminDoctorLedgerReport,
@@ -721,17 +721,17 @@ const ReportAll = ({
       requier: "(From , To , Patient)",
       roles: ["admin"],
     },
-    // {
-    //   id: 16,
-    //   action: handelAdminTotalAppointment,
-    //   style: "border-[#CD42A6]",
-    //   icon: (
-    //     <MdOutlinePerson className="w-10 h-10  group-hover:text-[#E090C9] duration-300 text-[#CD42A6] " />
-    //   ),
-    //   name: "Total Appointment",
-    //   requier: "(From , To , Doctor)",
-    //   roles: ["admin"],
-    // },
+    {
+      id: 16,
+      action: handelAdminTotalAppointment,
+      style: "border-[#CD42A6]",
+      icon: (
+        <MdOutlinePerson className="w-10 h-10  group-hover:text-[#E090C9] duration-300 text-[#CD42A6] " />
+      ),
+      name: "Total Appointment",
+      requier: "(From , To , Doctor)",
+      roles: ["admin"],
+    },
   ];
 
 
@@ -742,7 +742,7 @@ const ReportAll = ({
         {reportData &&
           reportData.map((report) => {
             return (
-              report.roles[0] === role ?
+              report.roles[0] || report.roles[1] === role ?
               
                 <div
                   key={report.id}

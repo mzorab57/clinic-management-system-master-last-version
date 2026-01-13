@@ -38,13 +38,7 @@ const Header = ({ showSildBar, setShowSildBar }) => {
             : location.pathname.slice(1)}
         </motion.span>
 
-        {/* menu */}
-        <AiOutlineMenu
-          onClick={() => setShowSildBar(!showSildBar)}
-          className="lg:hidden cursor-pointer mr-2"
-          color="gray"
-          size={30}
-        />
+     
 
         {/** search input */}
         {location.pathname !== "/detail" &&
@@ -52,7 +46,7 @@ const Header = ({ showSildBar, setShowSildBar }) => {
           location.pathname !== "/main" &&
           location.pathname !== "/report" &&
           location.pathname !== "/loan" && (
-            <div className="search flex items-center rounded-full   bg-white/60 hover:bg-white p-1.5  w-[410px] 2xl:w-[500px] 2xl:h-12 shadow-sm ">
+            <div className="search flex items-center rounded-full   bg-white/60 hover:bg-white p-1  w-[410px] 2xl:w-[500px] 2xl:h-12 shadow-sm ">
               <AiOutlineSearch size={22} className="text-sky-500" />
               <input
                 type="text"
@@ -77,6 +71,13 @@ const Header = ({ showSildBar, setShowSildBar }) => {
             <span className="relative px-5 2xl:text-2xl">Log Out</span>
           </Link>
         )}
+           {/* menu */}
+        <AiOutlineMenu
+          onClick={() => setShowSildBar(!showSildBar)}
+          className="lg:hidden cursor-pointer m-2"
+          color="gray"
+          size={30}
+        />
       </div>
     </div>
   );

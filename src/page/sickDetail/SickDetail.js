@@ -22,6 +22,8 @@ const SickDetail = () => {
         const getAdmin = async () => {
             const res = await api.post('appointment/inrow.php', { doctor_id });
             setSickDetail(res.data.data);
+            console.log(res.data.data);
+            
         }
 
         const interval = setInterval(() => {

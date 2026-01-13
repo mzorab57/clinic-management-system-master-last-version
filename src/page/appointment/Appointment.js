@@ -35,12 +35,12 @@ const Appointment = () => {
   const [appointment_note, setAppointmentNot] = useState("");
 
   // ama date bo bashi appoimenta
-  const toDate = new Date().toISOString().slice(0, 10);
+  // const toDate = new Date().toISOString().slice(0, 10);
   
-  // const year = new Date().getFullYear();
-  // const month = new Date().getMonth() + 1;
-  // const dd = new Date().getDate();
-  // let toDate = year + "-" + month + "-" + dd;
+  const year = new Date().getFullYear();
+  const month = new Date().getMonth() + 1;
+  const dd = new Date().getDate();
+  let toDate = year + "-" + month + "-" + dd;
  
 
   const [ddate, setDate] = useState(toDate);
